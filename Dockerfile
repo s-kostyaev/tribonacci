@@ -1,4 +1,4 @@
-FROM golang:1.10-alpine AS build-env
+FROM golang:1.11-alpine AS build-env
 
 ENV GOPATH=/ \
     GOOS=linux \
@@ -9,7 +9,7 @@ RUN apk update && \
     apk add git && \
     apk add make
 
-WORKDIR /src/github.com/s-kostyaev/tribonacci
+WORKDIR /root/
 ADD . .
 
 RUN make    
@@ -24,7 +24,7 @@ LABEL architecrture=amd64
 LABEL source="ssh://git@github.com:s-kostyaev/tribonacci.git"
 
 RUN mkdir /app
-COPY --from=build-env /src/github.com/s-kostyaev/tribonacci/bin/tribonacci-web /app/tribonacci-web
+COPY --from=build-env /root/bin/tribonacci-web /app/tribonacci-web
 COPY ./cmd/tribonacci-web/docs /app/docs
 WORKDIR /app/
 
