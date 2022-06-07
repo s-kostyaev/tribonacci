@@ -53,6 +53,10 @@ docker-push:
 	docker tag "$(DOCKER_IMAGE)" "$(DOCKER_REGISTRY)/$(DOCKER_IMAGE)"
 	docker push "$(DOCKER_REGISTRY)/$(DOCKER_IMAGE)"
 
+.PHONY: docker-debug
+docker-debug:
+	docker run --cap-add=SYS_PTRACE -p 8080:8080 -p 2345:2345 localhost/s-kostyaev/tribonacci:0.0.1
+
 # Misc
 TOOLS := \
 	github.com/alecthomas/gometalinter

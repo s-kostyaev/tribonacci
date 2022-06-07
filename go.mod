@@ -1,5 +1,7 @@
 module github.com/s-kostyaev/tribonacci
 
+go 1.15
+
 require (
 	github.com/agalitsyn/flagenv v0.0.0-20180207105531-adc4ea7bdf08
 	github.com/davecgh/go-spew v1.1.1 // indirect
