@@ -1,5 +1,7 @@
 module github.com/s-kostyaev/tribonacci
 
+go 1.23
+
 require (
 	github.com/agalitsyn/flagenv v0.0.0-20180207105531-adc4ea7bdf08
 	github.com/go-chi/chi v3.3.2+incompatible
@@ -12,5 +14,5 @@ require (
 	github.com/facebookgo/flagenv v0.0.0-20160425205200-fcd59fca7456 // indirect
 	github.com/facebookgo/stack v0.0.0-20160209184415-751773369052 // indirect
 	github.com/facebookgo/subset v0.0.0-20150612182917-8dac2c3c4870 // indirect
-	golang.org/x/net v0.17.0 // indirect
+	golang.org/x/net v0.33.0 // indirect
 )

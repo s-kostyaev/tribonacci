@@ -1,4 +1,4 @@
-FROM golang:1.11-alpine AS build-env
+FROM golang:1.23-alpine AS build-env
 
 ENV GOPATH=/ \
     GOOS=linux \
@@ -15,7 +15,7 @@ ADD . .
 RUN make    
 
 
-FROM alpine:3.7
+FROM alpine:3.21
 MAINTAINER s-kostyaev
 
 LABEL name=tribonacci
